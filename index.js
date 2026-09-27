@@ -12,7 +12,7 @@ document.querySelectorAll(".sidePageH2").forEach(h => {
 });
 
 const form = document.getElementById("weightForm");
-if (from) {
+if (form) {
   form.addEventListener("submit", e => {
     e.preventDefault();                                       
     const kg = Number(document.getElementById("weight").value);
