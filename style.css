@@ -1,0 +1,380 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+body {
+    background-color: rgb(2, 0, 14);
+    color: #e8e8f0;
+    min-height: 100vh;
+}
+
+/* ===== Länkar ===== */
+a {
+    color: turquoise;
+    transition: color .5s;
+}
+
+a:hover {
+    color: #5eead4;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: black;
+    background-image: url(pics/backGalaxy.webp);
+    background-size: cover;
+    background-position: center;
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-style: solid;
+}
+
+header h1 {
+    background-color: rgba(39, 38, 38, 0.712);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    color: aliceblue;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(39, 38, 38, 0.712);
+    mask-image: linear-gradient(to top, black 70%, transparent 100%);
+    padding: 1rem 1rem 1rem 1.5rem;
+}
+
+header li + li::before {
+    content: "|";
+    margin: 0 1.5rem;
+    color: #ffffff40;
+}
+
+header ul a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    border: 3px solid transparent;          /* plats reserverad — inget hopp vid hover */
+    transition: color .5s, border-color .5s;
+}
+
+header ul a[aria-current="page"] {
+    color: #5eead4;
+}
+
+header ul a:hover,
+header ul a:focus-visible {
+    color: #5eead4;
+    border-style: groove;
+    border-color: white;
+    outline: none;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: rgba(39, 38, 38, 0.712);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("pics/backGalaxy.webp");
+    background-size: cover;
+    background-position: center;
+    border-style: solid;
+    padding: 1rem 0;                        /* height: 6rem borttagen — växer med innehållet */
+}
+
+footer p {
+    text-align: center;
+    text-decoration: underline;
+    font-size: larger;
+    font-weight: bold;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 0.5rem;
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer a:hover {
+    color: turquoise;
+}
+
+footer li + li::before {
+    content: "|";
+    margin: 0 1.5rem;
+    color: #ffffff40;
+}
+
+/* ===== Rader på startsidan ===== */
+.row {
+    display: flex;
+    align-items: stretch;
+    border-left: 3px solid red;
+    border-right: 3px solid red;
+    border-bottom: 3px solid blue;
+    background-color: #0b0b12;
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row.rowReverse {
+    flex-direction: row-reverse;
+}
+
+.row img {
+    flex: 0 0 50%;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-left: 3px solid blue;
+    border-right: 3px solid blue;
+}
+
+.row > div,
+.row > h3 {
+    flex: 1;
+    min-width: 0;
+}
+
+.row > h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 25px;
+}
+
+.row > div {
+    padding: 1rem;
+}
+
+.row div h3 {
+    text-align: left;
+    padding-bottom: 1rem;
+}
+
+.row h2 {
+    text-decoration: underline;
+    font-weight: bold;
+    font-style: italic;
+    padding-bottom: 2rem;
+}
+
+#lastBorder {
+    border-bottom: none;
+}
+
+/* ===== Undersidor ===== */
+.sunContent,
+.bHContent,
+.earthContent {
+    border-style: solid;
+    border-width: 0 3.5px;
+    max-width: 1000px;
+    width: 90%;
+    min-height: 1000px;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sunContent {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                      url("https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001435/GSFC_20171208_Archive_e001435~large.jpg");
+    background-size: cover;
+}
+
+.bHContent {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                      url("https://svs.gsfc.nasa.gov/vis/a010000/a014100/a014146/BH_accretion_disk_viz_desktop.png");
+    background-size: contain;
+}
+
+.earthContent {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                      url("https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/0/885/modis_wonderglobe_lrg.jpg");
+    background-size: contain;
+}
+
+.sidePageH2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    text-decoration: underline;
+    font-size: clamp(2rem, 9vw, 100px);
+    text-align: center;
+    font-style: oblique;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+    typing 3s steps(12, end) forwards;
+}
+
+.sunContent p,
+.bHContent p,
+.earthContent p {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 1rem 5rem 0 5rem;
+    font-size: 1.1rem;
+}
+
+.sunContent p a:hover,
+.bHContent p a:hover,
+.earthContent p a:hover {
+    color: #5eead4;
+}
+
+/* ===== Fun fact ===== */
+.funFact {
+    max-width: 400px;
+    margin: 1rem 5rem 0 auto;
+}
+
+.factBtn {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;          /* nollar knappens standardgrå */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+    color: #e8e8f0;
+    border: 3px solid black;
+    border-radius: 10px 10px 0 0;
+    padding: 1rem 2rem;
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter .3s;
+}
+
+.factBtn:hover {
+    filter: brightness(1.6);                /* behåller gradienten */
+}
+
+.factBtn:focus-visible {
+    outline: 2px solid turquoise;
+    outline-offset: 2px;
+}
+
+.factBtn::after {
+    content: "▼";
+    float: right;
+    transition: transform .2s;
+}
+
+.factBtn[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.factList {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+    border: 3px solid black; 
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem 1rem 1rem 2.5rem;
+}
+
+.factList li {
+    padding: .5rem 0;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* ===== Platta och nedåt (768px) ===== */
+@media (max-width: 768px) {
+    header { min-height: 35vh;}                      /* headern tar mindre plats */
+
+    header ul a {
+        padding: .75rem 1rem;                    /* var 1rem 2rem */
+        font-size: 1.1rem; 
+    }
+
+    header li + li::before {
+        margin: 0 .5rem;                         /* var 0 1.5rem */
+    }
+
+    .row,
+    .row.rowReverse { flex-direction: column; }       /* bild överst, text under */
+
+    .row img {
+        flex: none;                                   /* släpper 50%-låsningen */
+        aspect-ratio: 16 / 9;                         /* plattare bild i stapelläge */
+        border-bottom: 3px solid blue;
+    }
+
+    .row > p { font-size: 1.3rem; padding: 1.5rem; }  /* mindre teasertext */
+
+    .sunContent p,
+    .bHContent p,
+    .earthContent p,
+    .funFact { margin: 1rem auto; }                   /* centrerat, ingen 5rem sidomarginal */
+
+    .sunContent,
+    .bHContent,
+    .earthContent { min-height: 600px; }              /* 1000px är för högt här */
+    
+    footer ul {
+        font-size: 85%;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer li + li::before {
+        content: none;
+        margin: 0 0.75rem;
+    }
+    footer ul a:hover,
+    footer ul a:focus-visible {
+    border-style: groove;
+    border-color: white;
+    transition: .5s;
+    }
+}
+
+/* ===== Mobil (480px) ===== */
+@media (max-width: 480px) {
+    header ul {
+        flex-direction: column;                       /* menyn staplas */
+        align-items: center;                          /* centrerad */
+        gap: .5rem;                                   /* luft mellan länkarna */
+    }
+
+    header li + li::before { content: none; }         /* | ser konstigt ut i kolumn */
+    header ul a { padding: .75rem 1rem; font-size: 1.1rem; }  /* mindre knappar */
+
+    .sunContent p,
+    .bHContent p,
+    .earthContent p {
+        padding: 1.5rem;                              /* mindre inre luft */
+        max-width: 100%;                              /* får fylla bredden */
+    }
+
+    .funFact { max-width: 100%; }                     /* samma för faktarutan */
+
+    footer li + li::before { margin: 0 .75rem; }      /* tätare separatorer */
+}
