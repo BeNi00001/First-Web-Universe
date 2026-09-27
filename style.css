@@ -109,6 +109,8 @@ footer ul {
 footer a {
     text-decoration: none;
     color: #ffffff;
+    display: inline-block;
+    padding: .5rem .75rem;
 }
 
 footer a:hover {
@@ -117,7 +119,7 @@ footer a:hover {
 
 footer li + li::before {
     content: "|";
-    margin: 0 1.5rem;
+    margin: 0 .5rem;
     color: #ffffff40;
 }
 
@@ -361,7 +363,7 @@ footer li + li::before {
     header ul {
         flex-direction: column;                       /* menyn staplas */
         align-items: center;                          /* centrerad */
-        gap: .5rem;                                   /* luft mellan länkarna */
+        gap: .25rem;                                   /* luft mellan länkarna */
     }
 
     header li + li::before { content: none; }         /* | ser konstigt ut i kolumn */
