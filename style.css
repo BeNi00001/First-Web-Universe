@@ -1,21 +1,21 @@
 /* ===== Reset ===== */
 * {
-    margin: 0;
+    margin: 0;                                  /* removes the browser's default spacing */
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;                     /* padding and border are counted inside the width */
     font-family: Consolas, "Courier New", monospace;
 }
 
 body {
-    background-color: rgb(2, 0, 14);
-    color: #e8e8f0;
-    min-height: 100vh;
+    background-color: rgb(2, 0, 14);            /* almost black, a little blue like space */
+    color: #e8e8f0;                             /* light text color */
+    min-height: 100vh;                          /* the page is at least as tall as the screen */
 }
 
-/* ===== Länkar ===== */
+/* ===== Links ===== */
 a {
     color: turquoise;
-    transition: color .5s;
+    transition: color .5s;                      /* smooth color change on hover */
 }
 
 a:hover {
@@ -24,20 +24,20 @@ a:hover {
 
 /* ===== Header ===== */
 header {
-    background-color: black;
+    background-color: black;                    /* shows while the background image is loading */
     background-image: url(pics/backGalaxy.webp);
-    background-size: cover;
+    background-size: cover;                     /* image fills the whole header */
     background-position: center;
-    min-height: 45vh;
+    min-height: 45vh;                           /* almost half the screen height */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;             /* title on top, menu at the bottom */
     border-style: solid;
 }
 
 header h1 {
-    background-color: rgba(39, 38, 38, 0.712);
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    background-color: rgba(39, 38, 38, 0.712);  /* see-through grey box behind the title */
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);  /* fades out at the bottom */
     color: aliceblue;
     text-align: center;
     padding: 1rem;
@@ -45,32 +45,32 @@ header h1 {
 }
 
 header ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+    list-style: none;                           /* removes the dots */
+    display: flex;                              /* links side by side */
+    flex-wrap: wrap;                            /* links go to a new line if there is no space */
     justify-content: center;
     background-color: rgba(39, 38, 38, 0.712);
-    mask-image: linear-gradient(to top, black 70%, transparent 100%);
+    mask-image: linear-gradient(to top, black 70%, transparent 100%);     /* fades out at the top */
     padding: 1rem 1rem 1rem 1.5rem;
 }
 
 header li + li::before {
-    content: "|";
+    content: "|";                               /* line between the menu links */
     margin: 0 1.5rem;
-    color: #ffffff40;
+    color: #ffffff40;                           /* see-through white */
 }
 
 header ul a {
     color: #ffffff;
-    text-decoration: none;
+    text-decoration: none;                      /* removes the underline */
     font-size: 1.3rem;
-    padding: 1rem 2rem;
-    border: 3px solid transparent;          /* plats reserverad — inget hopp vid hover */
+    padding: 1rem 2rem;                         /* bigger click area */
+    border: 3px solid transparent;              /* invisible border so the link doesn't jump on hover */
     transition: color .5s, border-color .5s;
 }
 
 header ul a[aria-current="page"] {
-    color: #5eead4;
+    color: #5eead4;                             /* highlights the page you are on */
 }
 
 header ul a:hover,
@@ -78,17 +78,17 @@ header ul a:focus-visible {
     color: #5eead4;
     border-style: groove;
     border-color: white;
-    outline: none;
+    outline: none;                              /* the groove border replaces the focus outline */
 }
 
 /* ===== Footer ===== */
 footer {
     background-color: rgba(39, 38, 38, 0.712);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("pics/backGalaxy.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("pics/backGalaxy.webp");  /* dark layer over the image */
     background-size: cover;
     background-position: center;
     border-style: solid;
-    padding: 1rem 0;                        /* height: 6rem borttagen — växer med innehållet */
+    padding: 1rem 0;                            /* grows with the content */
 }
 
 footer p {
@@ -109,8 +109,8 @@ footer ul {
 footer a {
     text-decoration: none;
     color: #ffffff;
-    display: inline-block;
-    padding: .5rem .75rem;
+    display: inline-block;                      /* lets padding make the click area bigger */
+    padding: 0.5rem 0.75rem;
 }
 
 footer a:hover {
@@ -119,61 +119,56 @@ footer a:hover {
 
 footer li + li::before {
     content: "|";
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
     color: #ffffff40;
 }
 
-/* ===== Rader på startsidan ===== */
+/* ===== Rows on the home page ===== */
 .row {
-    display: flex;
-    align-items: stretch;
+    display: flex;                              /* image and text side by side */
+    align-items: stretch;                       /* both sides get the same height */
     border-left: 3px solid red;
     border-right: 3px solid red;
     border-bottom: 3px solid blue;
     background-color: #0b0b12;
-    max-width: 1000px;
+    max-width: 1000px;                          /* never wider than 1000px */
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto;                             /* centers the row */
 }
 
 .row.rowReverse {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse;                /* flips it: image on the right */
 }
 
 .row img {
-    flex: 0 0 50%;
-    min-width: 0;
+    flex: 0 0 50%;                              /* the image always takes half */
+    min-width: 0;                               /* lets the image shrink instead of breaking the layout */
     width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
+    aspect-ratio: 1/1;                          /* square image */
+    object-fit: cover;                          /* crops the image instead of stretching it */
     border-left: 3px solid blue;
     border-right: 3px solid blue;
 }
 
 .row > div,
 .row > h3 {
-    flex: 1;
+    flex: 1;                                    /* text takes the rest of the space */
     min-width: 0;
 }
 
 .row > h3 {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;                        /* teaser centered vertically */
+    justify-content: center;                    /* and horizontally */
     text-align: center;
     padding: 2rem;
     font-weight: bolder;
     font-style: italic;
-    font-size: 25px;
+    font-size: 1.5rem;
 }
 
 .row > div {
     padding: 1rem;
-}
-
-.row div h3 {
-    text-align: left;
-    padding-bottom: 1rem;
 }
 
 .row h2 {
@@ -184,33 +179,33 @@ footer li + li::before {
 }
 
 #lastBorder {
-    border-bottom: none;
+    border-bottom: none;                        /* no blue line under the last row */
 }
 
-/* ===== Undersidor ===== */
+/* ===== Side pages ===== */
 .sunContent,
 .bHContent,
 .earthContent {
     border-style: solid;
-    border-width: 0 3.5px;
+    border-width: 0 3.5px;                      /* border only on the left and right */
     max-width: 1000px;
     width: 90%;
     min-height: 1000px;
     margin: 0 auto;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;               /* the image is shown only once */
 }
 
 .sunContent {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                      url("pics/sun.webp");
+                      url("pics/sun.webp");     /* dark layer over the sun image */
     background-size: cover;
 }
 
 .bHContent {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                       url("pics/bHole.jpg");
-    background-size: contain;
+    background-size: contain;                   /* the whole image is visible */
 }
 
 .earthContent {
@@ -222,20 +217,24 @@ footer li + li::before {
 .sidePageH2 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
     text-decoration: underline;
-    font-size: clamp(2rem, 9vw, 100px);
+    font-size: clamp(2rem, 9vw, 100px);         /* grows with the screen, between 2rem and 100px */
     text-align: center;
     font-style: oblique;
-    overflow: hidden;
-    white-space: nowrap;
+    overflow: hidden;                           /* hides letters that are not "typed" yet */
+    white-space: nowrap;                        /* keeps the heading on one line */
     margin: 0 auto;
-    animation: 
-    typing 3s steps(var(--chars, 10), end) forwards;
+    animation: typing 3s steps(var(--chars, 10), end) forwards;  /* one step per letter, count comes from JS */
+}
+
+@keyframes typing {
+    from { width: 0; }                          /* starts with no letters visible */
+    to   { width: 100%; }                       /* ends with the whole heading */
 }
 
 .sunContent p,
 .bHContent p,
 .earthContent p {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));  /* dark box so the text is readable */
     border-radius: 10px;
     padding: 2rem;
     max-width: 400px;
@@ -243,140 +242,122 @@ footer li + li::before {
     font-size: 1.1rem;
 }
 
-.sunContent p a:hover,
-.bHContent p a:hover,
-.earthContent p a:hover {
-    color: #5eead4;
-}
-
 /* ===== Fun fact ===== */
 .funFact {
     max-width: 400px;
-    margin: 1rem 5rem 0 auto;
+    margin: 1rem 5rem 0 auto;                   /* pushed to the right side */
 }
 
 .factBtn {
     width: 100%;
     text-align: left;
-    background-color: transparent;          /* nollar knappens standardgrå */
+    background-color: transparent;              /* removes the button's default grey */
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
     color: #e8e8f0;
     border: 3px solid black;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;               /* round corners only on top */
     padding: 1rem 2rem;
-    font: inherit;
+    font: inherit;                              /* same font as the rest of the page */
     font-size: 1.1rem;
     font-weight: bold;
-    cursor: pointer;
+    cursor: pointer;                            /* hand cursor on hover */
     transition: filter .3s;
 }
 
 .factBtn:hover {
-    filter: brightness(1.6);                /* behåller gradienten */
+    filter: brightness(1.6);                    /* lighter on hover, keeps the gradient */
 }
 
 .factBtn:focus-visible {
-    outline: 2px solid turquoise;
+    outline: 2px solid turquoise;               /* visible when using the keyboard */
     outline-offset: 2px;
 }
 
 .factBtn::after {
-    content: "▼";
+    content: "▼";                               /* arrow on the right side */
     float: right;
     transition: transform .2s;
 }
 
 .factBtn[aria-expanded="true"]::after {
-    transform: rotate(180deg);
+    transform: rotate(180deg);                  /* arrow points up when the list is open */
 }
 
 .factList {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
-    border: 3px solid black; 
-    border-top: none;
-    border-radius: 0 0 10px 10px;
+    border: 3px solid black;
+    border-top: none;                           /* connects to the button above */
+    border-radius: 0 0 10px 10px;               /* round corners only at the bottom */
     padding: 1rem 1rem 1rem 2.5rem;
 }
 
 .factList li {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
 }
 
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* ===== Platta och nedåt (768px) ===== */
+/* ===== Tablet and smaller (768px) ===== */
 @media (max-width: 768px) {
-    header { min-height: 35vh;}                      /* headern tar mindre plats */
+    header { min-height: 35vh; }                /* header takes less space */
 
     header ul a {
-        padding: .75rem 1rem;                    /* var 1rem 2rem */
-        font-size: 1.1rem; 
+        padding: 0.75rem 1rem;                  /* smaller menu buttons */
+        font-size: 1.1rem;
     }
 
     header li + li::before {
-        margin: 0 .5rem;                         /* var 0 1.5rem */
+        margin: 0 0.5rem;                       /* less space around the | */
     }
 
     .row,
-    .row.rowReverse { flex-direction: column; }       /* bild överst, text under */
+    .row.rowReverse { flex-direction: column; } /* image on top, text below */
 
     .row img {
-        flex: none;                                   /* släpper 50%-låsningen */
-        aspect-ratio: 16 / 9;                         /* plattare bild i stapelläge */
+        flex: none;                             /* removes the 50% rule */
+        aspect-ratio: 16 / 9;                   /* flatter image when stacked */
         border-bottom: 3px solid blue;
     }
 
-    .row > p { font-size: 1.3rem; padding: 1.5rem; }  /* mindre teasertext */
+    .row > h3 { font-size: 1.3rem; padding: 1.5rem; }  /* smaller teaser text */
 
     .sunContent p,
     .bHContent p,
     .earthContent p,
-    .funFact { margin: 1rem auto; }                   /* centrerat, ingen 5rem sidomarginal */
+    .funFact { margin: 1rem auto; }             /* centered, no big side margins */
 
     .sunContent,
     .bHContent,
-    .earthContent { min-height: 600px; }              /* 1000px är för högt här */
-    
+    .earthContent { min-height: 600px; }        /* 1000px is too tall here */
+
     footer ul {
         font-size: 85%;
-        flex-direction: column;
+        flex-direction: column;                 /* sources stacked under each other */
         align-items: center;
     }
-    footer li + li::before {
-        content: none;
-        margin: 0 0.75rem;
-    }
-    footer ul a:hover,
-    footer ul a:focus-visible {
-    border-style: groove;
-    border-color: white;
-    transition: .5s;
-    }
+
+    footer li + li::before { content: none; }   /* no | when the list is stacked */
 }
 
-/* ===== Mobil (480px) ===== */
+/* ===== Mobile (480px) ===== */
 @media (max-width: 480px) {
     header ul {
-        flex-direction: column;                       /* menyn staplas */
-        align-items: center;                          /* centrerad */
-        gap: .25rem;                                   /* luft mellan länkarna */
+        flex-direction: column;                 /* menu links stacked */
+        align-items: center;
+        gap: 0.25rem;                           /* space between the links */
     }
 
-    header li + li::before { content: none; }         /* | ser konstigt ut i kolumn */
-    header ul a { padding: .75rem 1rem; font-size: 1.1rem; }  /* mindre knappar */
+    header li + li::before { content: none; }   /* no | when the menu is stacked */
 
     .sunContent p,
     .bHContent p,
     .earthContent p {
-        padding: 1.5rem;                              /* mindre inre luft */
-        max-width: 100%;                              /* får fylla bredden */
+        padding: 1.5rem;                        /* less inner space */
+        max-width: 100%;                        /* can fill the whole width */
     }
 
-    .funFact { max-width: 100%; }                     /* samma för faktarutan */
+    .funFact { max-width: 100%; }
+}
 
-    footer li + li::before { margin: 0 .75rem; }      /* tätare separatorer */
+/* ===== Accessibility: less motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    .sidePageH2 { animation: none; }            /* no typewriter for users who turned off animations */
 }

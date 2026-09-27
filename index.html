@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">                            
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Universe</title>
-    <meta name="description" content="A beginner-friendly guide to the universe — explore the Sun, 
+    <!-- Short description of what the search reslut will show such as Google. -->
+    <meta name="description" content="A beginner-friendly guide to the universe — explore the Sun,
     black holes and our own planet Earth, with facts from NASA.">
-    <link rel="stylesheet" href="style.css">
+    <!-- Connecting this page to the CSS for styling. -->
+    <link rel="stylesheet" href="style.css">                    
 </head>
+
 <body>
     <header>
         <h1>The Universe</h1>
-
+        <!-- Nav as navigation for user to nmavigate thro websites different pages. A semantic element. -->
         <nav>
+            <!-- Unordered list, where we create the list of the pages. -->
             <ul>
+                <!-- aria-current tells screen readers "this is the page you're on" -->
                 <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="sun.html">Sun</a></li>
                 <li><a href="blackHole.html">Black hole</a></li>
@@ -23,11 +28,16 @@
     </header>
 
     <main>
+        <!-- .row: image on the left, text on the right (stacks vertically on small screens). -->
         <section class="row">
+            <!-- Local image. width/height reserve space so the page doesn't jump while loading.
+                loading="lazy" delays it so the header background loads first. -->
             <img src="pics/galaxy.webp"
                  alt="The N44 superbubble in the Large Magellanic Cloud, photographed by Hubble"
                  width="1000"
                  loading="lazy">
+            <!-- Groups the heading and paragraphs into ONE flex item,
+                so .row places the image on one side and all the text on the other. -->     
             <div>
                 <h2>What is out there?</h2>
 
@@ -37,6 +47,8 @@
 
                 <p>The night sky is much bigger than it looks. What we can see with our
                     eyes is only a tiny part of it. Astronomers at
+                    <!-- target="_blank" opens the link in a new tab, so our site stays open.
+                        rel="noopener noreferrer" stops the new page from accessing or controlling our page (security).. -->
                     <a href="https://science.nasa.gov/universe/galaxies/"
                    target="_blank" rel="noopener noreferrer">NASA</a>
                     study space with telescopes, and they have found that the universe
@@ -53,11 +65,13 @@
             </div>
         </section>
 
+        <!-- .rowReverse: flips the order, text on the left and image on the right. -->
         <section class="row rowReverse">
             <img src="pics/sun.webp"
                  alt="The Sun releasing a coronal mass ejection, seen in ultraviolet light"
                  width="1000"
                  loading="lazy">
+            <!-- h3 teaser: a short preview of what the other pages are going to be about. -->
             <h3>The star that keeps us alive,</h3>
         </section>
 
@@ -69,7 +83,8 @@
             <h3>The strangest object we know of...</h3>
         </section>
 
-        <section class="row rowReverse" id="lastBorder">
+        <!-- Id removes the border on the last section, so the top and bottom of the page look the same. -->
+        <section class="row rowReverse" id="lastBorder"> 
             <img src="pics/earth.jpg"
                  alt="Earth seen from space, showing clouds and oceans"
                  width="1000"
@@ -79,6 +94,8 @@
     </main>
 
     <footer>
+        <!-- Footer: semantic element for the bottom of the page.
+            Lists the websites used as sources for text and images.-->
         <p>Sources:</p>
         <ul>
             <li><a href="https://science.nasa.gov/universe/galaxies/" target="_blank" rel="noopener noreferrer">NASA – Galaxies</a></li>
@@ -87,6 +104,8 @@
         </ul>
     </footer>
 
+    <!-- Connects the page to JavaScript for interactivity:
+     fun fact buttons, typewriter heading and the weight calculator. This examples might be from other pages! -->
     <script src="index.js"></script>
 </body>
 </html>

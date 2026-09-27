@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earth</title>
+    <!-- Find explanation in index.html -->
     <meta name="description" content="Why is Earth the only place we know life exists? Learn how water, the atmosphere and a magnetic field protect our planet.">
     <link rel="preload" as="image" href="pics/earth.jpg" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- The side pages share the same structure, only the content differs.
+     See earth.html for comments explaining the code. -->
 <body>
     <header>
         <h1>The Universe</h1>
 
+        <!-- Find explanation in index.html -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sun.html">Sun</a></li>
                 <li><a href="blackHole.html">Black hole</a></li>
+                <!-- Find explanation in index.html -->
                 <li><a href="earth.html" aria-current="page">Earth</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- Main content of the Earth page.
+            The paragraphs hold the main text; the fun fact section below
+            (with the weight calculator) is extra for curious readers. -->
         <section class="earthContent">
             <h2 class="sidePageH2">THE EARTH</h2>
-
             <p> Earth is the only place in the universe where we know life exists. It sits at just the right distance from the Sun — close enough to stay warm, far enough not to boil — so water can stay liquid. 
                 And there is a lot of it: oceans cover about 71% of the surface. Earth also protects itself. Its atmosphere 
                 blocks harmful radiation from space, and a magnetic field created by its hot, spinning core shields us from the solar wind.
@@ -34,32 +42,40 @@
             </p>
 
             <div class="funFact">
+                <!-- Button that opens and closes the fun fact list.
+                    aria-expanded tells screen readers if the list is open or closed,
+                    aria-controls points to the list it controls (id="factList"). -->
                 <button class="factBtn" aria-expanded="false" aria-controls="factList">Fun Fact</button>
-                <ul class="factList" id="factList" hidden>
-                    <li>Earth is about 4.5 billion years old.</li>
-                    <li>A day on Earth is actually 23.9 hours long, not a full 24.</li>
-                    <li>Our Moon keeps Earth from wobbling too much on its axis, which has helped keep our climate stable for thousands of years.</li>
-                    <li><form id="weightForm">
-                        <label for="weight">Your weight on Earth (kg)</label>
-                        <input type="number" id="weight" min="1" max="500" required>
+                    <!-- The fun fact list. "hidden" hides it until the user clicks the button (handled in index.js). -->
+                    <ul class="factList" id="factList" hidden>
+                        <li>Earth is about 4.5 billion years old.</li>
+                        <li>A day on Earth is actually 23.9 hours long, not a full 24.</li>
+                        <li>Our Moon keeps Earth from wobbling too much on its axis, which has helped keep our climate stable for thousands of years.</li>
+                        <!-- Weight calculator: the user types their weight and picks a place.
+                            Each option's value is the gravity compared to Earth; JS multiplies it with the weight.
+                            aria-live="polite" makes screen readers read the result out loud when it appears. -->
+                        <li><form id="weightForm">
+                            <label for="weight">Your weight on Earth (kg)</label>
+                            <input type="number" id="weight" min="1" max="500" required>
 
-                        <label for="place">Where?</label>
-                        <select id="place">
-                            <option value="27.9">The Sun</option>
-                            <option value="0.165">The Moon</option>
-                            <option value="0.38">Mars</option>
-                        </select>
+                            <label for="place">Where?</label>
+                            <select id="place">
+                                <option value="27.9">The Sun</option>
+                                <option value="0.165">The Moon</option>
+                                <option value="0.38">Mars</option>
+                            </select>
 
-                        <button type="submit">Calculate</button>
-                        <output id="result" aria-live="polite"></output>
-                        </form>
-                    </li>
-                </ul>
+                            <button type="submit">Calculate</button>
+                            <output id="result" aria-live="polite"></output>
+                            </form>
+                        </li>
+                    </ul>
             </div>
         </section>
     </main>
 
     <footer>
+        <!-- Find explanation in index.html -->
         <p>Sources:</p>
         <ul>
             <li><a href="https://science.nasa.gov/universe/galaxies/" target="_blank" rel="noopener noreferrer">NASA – Galaxies</a></li>
@@ -68,6 +84,10 @@
         </ul>
     </footer>
 
+    <!-- Find explanation in index.html -->
     <script src="index.js"></script>
 </body>
 </html>
+
+<!-- The side pages share the same structure, only the content differs.
+     See earth.html for comments explaining the code. -->
