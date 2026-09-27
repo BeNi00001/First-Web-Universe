@@ -201,19 +201,19 @@ footer li + li::before {
 
 .sunContent {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                      url("https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001435/GSFC_20171208_Archive_e001435~large.jpg");
+                      url("pics/sun.webp");
     background-size: cover;
 }
 
 .bHContent {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                      url("https://svs.gsfc.nasa.gov/vis/a010000/a014100/a014146/BH_accretion_disk_viz_desktop.png");
+                      url("pics/bHole.jpg");
     background-size: contain;
 }
 
 .earthContent {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                      url("https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/0/885/modis_wonderglobe_lrg.jpg");
+                      url("pics/earth.jpg");
     background-size: contain;
 }
 
