@@ -229,7 +229,7 @@ footer li + li::before {
     white-space: nowrap;
     margin: 0 auto;
     animation: 
-    typing 3s steps(12, end) forwards;
+    typing 3s steps(var(--chars, 10), end) forwards;
 }
 
 .sunContent p,
